@@ -1,29 +1,24 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * _strpy - Copies at most an inputted number
- * of bytes from string src into dest
- * @dest: The buffer storing the string copy.
- * @src: The source strin.
- * @n: The maximum number of bytes to be copied from src.
+ * _strncat - Concatenates two strings using at most
+ * an inputted number of bytes from src.
+ * @dest: The string to be appended upon.
+ * @src: The string to be appended to dest.
+ * @n: The number of bytes from src to be appended to dest.
  * Return: A pointer to the resulting string dest.
  *
  */
 
-char *_strcpy(char *dest, char *src, int n)
+char *_strncat(char *dest, char *src, int n)
 
 {
-	int index = 0, src_len = 0;
+        int index = 0, dest_len = 0;
 
-	while (src[index++])
-	src_len++;
-
-	for (index = 0; src[index] && index < n; index++)
-	dest[index] = src[index];
-
-	for (index = src_len; index < n; index++)
-	dest[index] = '\0';
-
-	return (dest);
+        while (dest[index++])
+        dest_len++;
+        for (index = 0; src[index] && index < n; index++)
+        dest[dest_len] = src[index];
+        return (dest);
 }
+
